@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +23,7 @@
             position: relative;
             height: 70vh;
             background: linear-gradient(rgba(34, 197, 94, 0.8), rgba(22, 163, 74, 0.8)),
-                        url('https://images.pexels.com/photos/221016/pexels-photo-221016.jpeg?_gl=1*1smx0p*_ga*Njc1Njg3MDY1LjE3NTMwMTgwNDg.*_ga_8JE65Q40S6*czE3NTMwNzA1MzkkbzIkZzEkdDE3NTMwNzA1NDAkajU5JGwwJGgw') center/cover;
+                url('https://images.pexels.com/photos/221016/pexels-photo-221016.jpeg?_gl=1*1smx0p*_ga*Njc1Njg3MDY1LjE3NTMwMTgwNDg.*_ga_8JE65Q40S6*czE3NTMwNzA1MzkkbzIkZzEkdDE3NTMwNzA1NDAkajU5JGwwJGgw') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -47,11 +48,38 @@
             animation: fadeInUp 1s ease;
         }
 
+        .img-logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border-radius: 75px;
+            border: 5px solid white;
+            height: 150px;
+            width: 150px;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+
+            /* Adjust logo size for smaller screens */
+            .img-logo {
+                top: 10px;
+                /* Reduced top margin */
+                left: 50%;
+                /* Center horizontally */
+                transform: translateX(-50%);
+                /* Correct the alignment */
+                height: 100px;
+                width: 100px;
+                z-index: 10;
+            }
+        }
+
         .logo {
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .tagline {
@@ -95,7 +123,7 @@
             position: relative;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
@@ -114,7 +142,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
             color: white;
             padding: 2rem 1.5rem 1.5rem;
             font-weight: 500;
@@ -146,7 +174,7 @@
             padding: 2.5rem;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
         }
 
@@ -242,6 +270,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -303,14 +332,23 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Header Section with Background Image -->
     <header class="header">
+        <img src="assets/logo_green.jpg" class="img-logo" />
         <div class="header-overlay"></div>
         <div class="header-content">
             <h1 class="logo floating">🌱 Green Edge FPCL</h1>
@@ -325,15 +363,18 @@
             <h2 class="gallery-title animate-on-scroll">Our Agriculture Solutions</h2>
             <div class="gallery-grid">
                 <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Smart Farming Technology">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="Smart Farming Technology">
                     <div class="gallery-caption">Smart Farming Technology</div>
                 </div>
                 <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Sustainable Irrigation">
+                    <img src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="Sustainable Irrigation">
                     <div class="gallery-caption">Water Management Systems</div>
                 </div>
                 <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Crop Monitoring">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="Crop Monitoring">
                     <div class="gallery-caption">Crop Health Monitoring</div>
                 </div>
             </div>
@@ -344,8 +385,10 @@
     <section class="company-info">
         <div class="container">
             <h2 class="animate-on-scroll">About Green Edge FPCL</h2>
-            <p class="animate-on-scroll">We are dedicated to revolutionizing agriculture through sustainable practices and innovative technologies. Our solutions help farmers increase productivity while protecting the environment.</p>
-            
+            <p class="animate-on-scroll">We are dedicated to revolutionizing agriculture through sustainable practices
+                and innovative technologies. Our solutions help farmers increase productivity while protecting the
+                environment.</p>
+
             <div class="services-list">
                 <div class="service-item animate-on-scroll">
                     <h4>🌾 Smart Crop Monitoring</h4>
@@ -427,7 +470,7 @@
             elements.forEach(el => {
                 const rect = el.getBoundingClientRect();
                 const isVisible = rect.top < window.innerHeight - 100;
-                
+
                 if (isVisible) {
                     el.classList.add('visible');
                 }
@@ -436,7 +479,7 @@
 
         // Check animations on scroll
         window.addEventListener('scroll', checkAnimations);
-        
+
         // Check animations on load
         window.addEventListener('load', () => {
             setTimeout(checkAnimations, 300);
@@ -444,28 +487,28 @@
 
         // Smooth hover effects for gallery items
         document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
+            item.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-10px) scale(1.02)';
             });
-            
-            item.addEventListener('mouseleave', function() {
+
+            item.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(-10px)';
             });
         });
 
         // Contact card hover effects
         document.querySelectorAll('.contact-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-10px)';
                 this.style.boxShadow = '0 15px 40px rgba(34, 197, 94, 0.2)';
             });
-            
-            card.addEventListener('mouseleave', function() {
+
+            card.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(-5px)';
                 this.style.boxShadow = '0 10px 30px rgba(34, 197, 94, 0.15)';
             });
         });
     </script>
 </body>
-</html>
 
+</html>
