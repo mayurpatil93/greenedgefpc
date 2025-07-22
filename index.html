@@ -246,7 +246,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
-            max-width: 800px;
+            max-width: auto;
             margin: 3rem auto 0;
         }
 
@@ -353,12 +353,136 @@
                 transform: translateY(-10px);
             }
         }
+
+        .company-values {
+            padding: 4rem 0;
+            background: #f0fdf4;
+            /* light green background */
+            color: #1f2937;
+            text-align: center;
+        }
+
+        .company-values .section-title {
+            font-size: 2.5rem;
+            color: #16a34a;
+            margin-bottom: 3rem;
+        }
+
+        .value-block {
+            margin-bottom: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(34, 197, 94, 0.1);
+        }
+
+        .value-block h3 {
+            font-size: 1.8rem;
+            color: #22c55e;
+            margin-bottom: 1rem;
+        }
+
+        .value-block p {
+            font-size: 1.1rem;
+            color: #374151;
+            line-height: 1.7;
+        }
+
+        .objectives-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0 0;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .objectives-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.25rem;
+            padding-left: 2rem;
+            position: relative;
+            text-align: left;
+            color: #374151;
+        }
+
+        .objectives-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.2rem;
+            color: #16a34a;
+        }
+
+        .objectives-list .label {
+            font-weight: 600;
+            display: inline-block;
+            min-width: 230px;
+            /* Adjust based on your longest label */
+            color: #1f2937;
+        }
+
+        .section-nav {
+            background-color: #ecfdf5;
+            text-align: center;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section-nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #065f46;
+            transition: color 0.3s ease;
+        }
+
+        .section-nav a:hover {
+            color: #16a34a;
+        }
+
+        .map-section {
+            padding: 4rem 0;
+            background: #f8fafc;
+            text-align: center;
+        }
+
+        .map-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 
 <body>
     <!-- Header Section with Background Image -->
-    <header class="header">
+    <header class="header" id="home">
         <img src="assets/logo_green.jpg" class="img-logo" />
         <div class="header-overlay"></div>
         <div class="header-content">
@@ -367,6 +491,14 @@
             <p class="subtitle">Empowering farmers with innovative, eco-friendly technologies</p>
         </div>
     </header>
+    <nav class="section-nav">
+        <!-- <img src="assets/logo_green.jpg" height="50" width="50"  /> -->
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <!-- Image Gallery Section -->
     <section class="image-gallery">
@@ -421,8 +553,54 @@
         </div>
     </section>
 
+    <!-- Vision, Mission & Objectives Section -->
+    <section class="company-values" id="about">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Our Vision & Mission</h2>
+
+            <div class="value-block animate-on-scroll">
+                <h3>🌿 Vision</h3>
+                <p>
+                    To be a leading enterprise of farmers adopting and promoting advanced hi-tech sustainable organic
+                    agriculture and agro-based products, empowering the farming community.
+                </p>
+            </div>
+
+            <div class="value-block animate-on-scroll">
+                <h3>🚜 Mission</h3>
+                <p>
+                    We are dedicated to enhancing the livelihoods of farmers by providing them with the necessary
+                    resources, knowledge, and support to adopt innovative and sustainable agricultural practices. Our
+                    mission is to cultivate and market a diverse range of crops, ensuring fair prices and market access
+                    for farmers. We strive to foster a collaborative and inclusive environment that values every
+                    farmer's contributions and promotes community well-being.
+                </p>
+            </div>
+
+            <div class="value-block animate-on-scroll">
+                <h3>🎯 Objectives of Producer Companies</h3>
+                <ul class="objectives-list">
+                    <li><span class="label">Sustainable Farming:</span> Promote organic, water-efficient, and low-carbon
+                        farming
+                        using improved seeds and crop varieties.</li>
+                    <li><span class="label">Technology in Agriculture:</span> Advance tech-based farming and
+                        agro-industrial
+                        management, including consultancy and project services.</li>
+                    <li><span class="label">Research & Development:</span> Innovate in agronomic practices, seed
+                        production, crop
+                        management, and value-added product development.</li>
+                    <li><span class="label">IEC Strategy:</span> Improve Agri business communication through
+                        Information,
+                        Education & Communication (IEC), IQT, and AI integration.</li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+
     <!-- Contact Section -->
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
         <div class="container">
             <h2 class="contact-title animate-on-scroll">Contact Us</h2>
             <div class="contact-grid">
@@ -463,6 +641,18 @@
                         <p>Closed</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <!-- Google Maps Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="contact-title animate-on-scroll">📍 Find Us on Map</h2>
+            <div class="map-container animate-on-scroll">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3801.5947621830387!2d75.8484!3d17.669342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQwJzA5LjYiTiA3NcKwNTAnNTQuMiJF!5e0!3m2!1sen!2sin!4v1753175018378!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
